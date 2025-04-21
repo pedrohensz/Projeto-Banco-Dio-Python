@@ -1,0 +1,80 @@
+from datetime import datetime
+saldo = 0
+extrato_valor = []
+contagem_saque = 0
+global operacao
+global horario
+
+def deposito(valor_deposito):
+    global saldo
+    global extrato_valor
+    try:
+        if valor_deposito < 0:
+            print("Valor é negativo, insira um valor positivo:")
+        else:
+            saldo += valor_deposito
+            horario = datetime.now()
+            operacao = (horario, valor_deposito,"Deposito")
+            extrato_valor.append(operacao)
+            print("Depositando...")
+            print(f"Seu saldo é de: R${saldo:.2f}")
+    except ValueError:
+        print("Valor inválido!")
+
+def saque(valor_saque):
+    global saldo
+    global contagem_saque
+    try:
+        if valor_saque > saldo:
+            print ("Valor desejado para saque é maior que o seu saldo.")
+        elif valor_saque > 500:
+            print("Valor do saque maior do que o permitido. ")
+        else:
+            contagem_saque += 1
+            if contagem_saque > 3:
+                print ("Quantidade de saques diários antiginda.")
+            else:
+                saldo -= valor_saque
+                horario = datetime.now()
+                operacao = (horario, valor_saque,"Saque")
+                extrato_valor.append(operacao)
+                print("Sacando...")
+                print(f"Seu saldo é de: R${saldo:.2f}")
+    except ValueError:
+        print("Valor inválido!")
+
+
+
+def mostrar_extrato():
+    global saldo 
+    saldo = int(saldo)
+    for operacao in extrato_valor:
+        horario, valor, tipo = operacao
+        data_formatada = horario.strftime("%d/%m/%Y %H:%M:%S")
+        print(f"{tipo} de R${valor:.2f} em {data_formatada}")
+
+
+print("-"*80)
+print("Bem vindo ao Banco XXXXXX")
+print("-"*80)
+print("Qual a opção desejada? ")
+
+while True:
+    try:
+        opcao = int(input("\n [1]Sacar\n [2]Deposito\n [3]Extrato\n [0]Sair\n: "))
+        if opcao == 1:
+            valor_saque = int(input("Insira o valor desejado para saque: "))
+            saque(valor_saque)
+
+        elif opcao == 2:
+            valor_deposito = int(input("Insira o valor desejado para deposito: "))
+            deposito(valor_deposito)
+        
+        elif opcao == 3:
+            mostrar_extrato()
+
+        elif opcao == 0:
+            print("Muito obrigado por utilizar nosso sistema até logo ")
+            break
+    except ValueError:
+        print("Valor inválido!")
