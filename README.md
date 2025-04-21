@@ -30,13 +30,24 @@ Este é um projeto simples de terminal em Python que simula algumas operações 
 git clone https://github.com/seu-usuario/banco-python.git
 cd banco-python
 Execute o script:
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 32bb10a6e0204ca0f7c3cbdf2aa1a17851643ada
 python banco.py
 Escolha uma das opções do menu:
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 32bb10a6e0204ca0f7c3cbdf2aa1a17851643ada
 [1] Sacar
 [2] Depositar
 [3] Extrato
 [0] Sair
 🧪 Exemplo de uso
+
 [2] Depositar
 Insira o valor desejado para depósito: 200
 Depositando...
