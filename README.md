@@ -27,57 +27,37 @@ Este é um projeto simples de terminal em Python que simula algumas operações 
 
 1. **Clone o repositório:**
 
-```bash
 git clone https://github.com/seu-usuario/banco-python.git
 cd banco-python
 Execute o script:
-
-bash
-Copiar
-Editar
 python banco.py
 Escolha uma das opções do menu:
-
-csharp
-Copiar
-Editar
 [1] Sacar
 [2] Depositar
 [3] Extrato
 [0] Sair
 🧪 Exemplo de uso
-bash
-Copiar
-Editar
 [2] Depositar
 Insira o valor desejado para depósito: 200
 Depositando...
 Seu saldo é de: R$200.00
-
 [1] Sacar
 Insira o valor desejado para saque: 50
 Sacando...
 Seu saldo é de: R$150.00
-
 [3] Extrato
 Depósito de R$200.00 em 21/04/2025 14:35:20
 Saque de R$50.00 em 21/04/2025 14:36:10
 ⚠️ Regras do Sistema
 Não é permitido depositar valores negativos.
-
 Não é permitido sacar valores negativos ou acima do saldo.
-
 O valor máximo por saque é R$500.
-
 Limite de 3 saques por execução do programa.
 
 🧩 Possíveis melhorias
 Controle de saques por dia (com data real).
-
 Suporte a múltiplos usuários.
-
 Armazenamento em arquivo ou banco de dados.
-
 Interface gráfica ou versão web.
 
 🤝 Contribuindo
